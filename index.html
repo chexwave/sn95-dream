@@ -7,6 +7,14 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
 </head>
 <body>
   <header>
@@ -81,14 +89,15 @@
     <section id="visualizer" class="section">
       <div class="container">
         <h2>3D Visualizer</h2>
-        <p class="section-lead">Exploded views for the systems that matter. Phase 1 skeleton is ready.</p>
-        <div class="visualizer-placeholder">
-          <div class="viz-box">
-            <p>Three.js SN95 chassis + selectable assemblies</p>
-            <p class="muted">Suspension • Engine Bay • Brakes • Rear End</p>
-            <p class="coming">Coming online once the base model is locked.</p>
-          </div>
+        <p class="section-lead">Interactive SN95 chassis. Drag to orbit, scroll to zoom, click Explode to separate major assemblies.</p>
+        <div class="viz-controls">
+          <button id="explode-btn" class="filter-btn">Explode Assemblies</button>
+          <button id="reset-btn" class="filter-btn">Reset View</button>
         </div>
+        <div id="viz-container">
+          <canvas id="viz-canvas"></canvas>
+        </div>
+        <p class="muted" style="text-align:center; margin-top:0.75rem;">Phase 1: Procedural SN95 body + wheels. Real GLTF model and per-part explode next.</p>
       </div>
     </section>
   </main>
@@ -99,6 +108,6 @@
     </div>
   </footer>
 
-  <script src="app.js"></script>
+  <script type="module" src="app.js"></script>
 </body>
 </html>
