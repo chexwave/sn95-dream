@@ -112,12 +112,29 @@ nav a:hover { color: var(--accent); }
 .card .pn { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--accent); }
 .card .meta { font-size: 0.875rem; color: var(--text-muted); margin-top: 0.5rem; }
 
-.build-placeholder, .visualizer-placeholder {
+.build-placeholder {
   background: var(--surface); border: 1px dashed var(--border);
   border-radius: var(--radius); padding: 2rem; text-align: center;
 }
 .muted { color: var(--text-muted); font-size: 0.9rem; }
-.coming { margin-top: 1rem; font-weight: 600; color: var(--accent); }
+
+.viz-controls {
+  display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap;
+}
+#viz-container {
+  width: 100%;
+  height: 520px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+}
+#viz-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
 
 footer {
   border-top: 1px solid var(--border); padding: 2rem 0;
@@ -128,4 +145,5 @@ footer a { color: var(--accent); text-decoration: none; }
 @media (max-width: 640px) {
   nav { display: none; }
   .hero { padding: 3rem 0; }
+  #viz-container { height: 380px; }
 }
