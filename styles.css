@@ -1,0 +1,131 @@
+:root {
+  --bg: #f8f9fa;
+  --surface: #ffffff;
+  --text: #1a1a1a;
+  --text-muted: #6b7280;
+  --accent: #c41e3a;
+  --accent-soft: #fef2f2;
+  --border: #e5e7eb;
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --radius: 12px;
+}
+
+[data-theme="dark"] {
+  --bg: #0f1115;
+  --surface: #1a1d24;
+  --text: #f3f4f6;
+  --text-muted: #9ca3af;
+  --accent: #ef4444;
+  --accent-soft: #450a0a;
+  --border: #2d3139;
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.4);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background 0.2s, color 0.2s;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+header {
+  position: sticky; top: 0; z-index: 100;
+  background: color-mix(in srgb, var(--surface) 90%, transparent);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+}
+
+.logo { display: flex; align-items: center; gap: 0.5rem; font-weight: 700; }
+.logo-mark {
+  background: var(--accent); color: white; padding: 0.25rem 0.5rem;
+  border-radius: 6px; font-size: 0.875rem; letter-spacing: 0.05em;
+}
+.logo-text { font-size: 1.125rem; }
+
+nav { display: flex; gap: 1.5rem; }
+nav a { color: var(--text); text-decoration: none; font-weight: 500; font-size: 0.95rem; }
+nav a:hover { color: var(--accent); }
+
+#theme-toggle {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 999px; width: 40px; height: 40px;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem;
+}
+[data-theme="dark"] .icon-sun { display: none; }
+[data-theme="light"] .icon-moon, :root:not([data-theme]) .icon-moon { display: none; }
+
+.hero {
+  padding: 5rem 0 4rem;
+  background: linear-gradient(180deg, var(--accent-soft) 0%, transparent 100%);
+  text-align: center;
+}
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700; letter-spacing: -0.02em; line-height: 1.1;
+  margin-bottom: 1rem;
+}
+.hero-sub { font-size: 1.125rem; color: var(--text-muted); max-width: 640px; margin: 0 auto 2rem; }
+.hero-stats {
+  display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; flex-wrap: wrap;
+}
+.stat { text-align: center; }
+.stat-num { display: block; font-size: 1.75rem; font-weight: 700; color: var(--accent); }
+.stat-label { font-size: 0.875rem; color: var(--text-muted); }
+
+.section { padding: 4rem 0; }
+.section h2 { font-size: 2rem; margin-bottom: 0.5rem; }
+.section-lead { color: var(--text-muted); margin-bottom: 2rem; }
+
+.search-bar input {
+  width: 100%; max-width: 480px; padding: 0.75rem 1rem;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--surface); color: var(--text); font-size: 1rem;
+}
+
+.filters { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.filter-btn {
+  padding: 0.5rem 1rem; border-radius: 999px; border: 1px solid var(--border);
+  background: var(--surface); color: var(--text); cursor: pointer; font-weight: 500;
+}
+.filter-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+
+.card-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.25rem;
+}
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow);
+}
+.card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+.card .pn { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--accent); }
+.card .meta { font-size: 0.875rem; color: var(--text-muted); margin-top: 0.5rem; }
+
+.build-placeholder, .visualizer-placeholder {
+  background: var(--surface); border: 1px dashed var(--border);
+  border-radius: var(--radius); padding: 2rem; text-align: center;
+}
+.muted { color: var(--text-muted); font-size: 0.9rem; }
+.coming { margin-top: 1rem; font-weight: 600; color: var(--accent); }
+
+footer {
+  border-top: 1px solid var(--border); padding: 2rem 0;
+  text-align: center; color: var(--text-muted); font-size: 0.875rem;
+}
+footer a { color: var(--accent); text-decoration: none; }
+
+@media (max-width: 640px) {
+  nav { display: none; }
+  .hero { padding: 3rem 0; }
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SN95 Dream — 1994-95 GT 5.0 Program</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <div class="logo">
+        <span class="logo-mark">SN95</span>
+        <span class="logo-text">Dream Program</span>
+      </div>
+      <nav>
+        <a href="#parts">Parts</a>
+        <a href="#upgrades">Upgrades</a>
+        <a href="#build">Build Log</a>
+        <a href="#visualizer">Visualizer</a>
+      </nav>
+      <button id="theme-toggle" aria-label="Toggle theme">
+        <span class="icon-sun">☀</span>
+        <span class="icon-moon">☾</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>The SN95 Degenerate Operating System</h1>
+        <p class="hero-sub">Full parts database • Upgrade explorer • Build log • Exploded views<br>Built for the 1994-95 GT 5.0 that the guy with 15 Mustangs will want a login for.</p>
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-num">1995</span><span class="stat-label">GT 5.0 Manual</span></div>
+          <div class="stat"><span class="stat-num">215</span><span class="stat-label">Stock HP</span></div>
+          <div class="stat"><span class="stat-num">$1,500</span><span class="stat-label">Shell Price</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="parts" class="section">
+      <div class="container">
+        <h2>Parts Database</h2>
+        <p class="section-lead">Full confidence on every OEM number and common replacement. Search anything.</p>
+        <div class="search-bar">
+          <input type="text" id="parts-search" placeholder="Search parts, systems, or part numbers...">
+        </div>
+        <div id="parts-grid" class="card-grid"></div>
+      </div>
+    </section>
+
+    <section id="upgrades" class="section">
+      <div class="container">
+        <h2>Upgrade Explorer</h2>
+        <p class="section-lead">Filter by goal. See what actually changes the car.</p>
+        <div class="filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="highway">Highway Efficiency</button>
+          <button class="filter-btn" data-filter="reliability">Reliability</button>
+          <button class="filter-btn" data-filter="power">Power</button>
+          <button class="filter-btn" data-filter="track">Track</button>
+        </div>
+        <div id="upgrades-grid" class="card-grid"></div>
+      </div>
+    </section>
+
+    <section id="build" class="section">
+      <div class="container">
+        <h2>Build Log</h2>
+        <p class="section-lead">Your car. Ready for Saturday's data.</p>
+        <div class="build-placeholder">
+          <p>VIN, mileage, engine serial, and first inspection notes land here after the walk-around.</p>
+          <p class="muted">Structure is live. Drop the details and we lock the first entries.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="visualizer" class="section">
+      <div class="container">
+        <h2>3D Visualizer</h2>
+        <p class="section-lead">Exploded views for the systems that matter. Phase 1 skeleton is ready.</p>
+        <div class="visualizer-placeholder">
+          <div class="viz-box">
+            <p>Three.js SN95 chassis + selectable assemblies</p>
+            <p class="muted">Suspension • Engine Bay • Brakes • Rear End</p>
+            <p class="coming">Coming online once the base model is locked.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>SN95 Dream Program • Built by Grok 4.7 for the Chexwave degenerates • <a href="https://github.com/chexwave/sn95-dream" target="_blank">GitHub</a></p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
